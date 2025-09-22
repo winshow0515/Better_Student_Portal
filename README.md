@@ -49,3 +49,5 @@
 ### 校訓
 
 ### 校長排序
+
+https://coolors.co/ffffff-fc7753-1098f7
