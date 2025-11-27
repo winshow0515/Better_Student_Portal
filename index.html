@@ -35,26 +35,53 @@
 
     <!-- 倒數計時區 -->
     <section id="countdown-section">
-        <h2 class="display-5 fw-bold mb-4">倒數計時</h2>
+        <h2 class="display-5 fw-bold mb-4">終焉的倒數計時</h2>
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-                <!-- 統測倒數 -->
-                <div class="col">
-                    <div class="countdown-card">
-                        <h3 class="countdown-title">統測倒數</h3>
-                        <div id="countdown-tongshe" class="countdown-display"></div>
-                        <p class="countdown-date">2026/04/25</p>
-                    </div>
+            <div class="countdown-carousel">
+                <!-- 倒數計時卡片 -->
+                <div class="countdown-card active">
+                    <h3 class="countdown-title">第二次段考倒數</h3>
+                    <div id="countdown-exam2" class="countdown-display"></div>
+                    <p class="countdown-date">2025/12/01</p>
                 </div>
-                <!-- 終焉倒數 -->
-                <div class="col">
-                    <div class="countdown-card">
-                        <h3 class="countdown-title">終焉倒數</h3>
-                        <div id="countdown-end" class="countdown-display"></div>
-                        <p class="countdown-date">2025/12/20</p>
-                    </div>
+                <div class="countdown-card">
+                    <h3 class="countdown-title">終焉倒數</h3>
+                    <div id="countdown-end" class="countdown-display"></div>
+                    <p class="countdown-date">2025/12/20</p>
+                </div>
+                <div class="countdown-card">
+                    <h3 class="countdown-title">模擬考倒數</h3>
+                    <div id="countdown-mock" class="countdown-display"></div>
+                    <p class="countdown-date">2025/12/23</p>
+                </div>
+                <div class="countdown-card">
+                    <h3 class="countdown-title">學測倒數</h3>
+                    <div id="countdown-xuece" class="countdown-display"></div>
+                    <p class="countdown-date">2026/01/17</p>
+                </div>
+                <div class="countdown-card">
+                    <h3 class="countdown-title">統測倒數</h3>
+                    <div id="countdown-tongshe" class="countdown-display"></div>
+                    <p class="countdown-date">2026/04/25</p>
+                </div>
+                <div class="countdown-card">
+                    <h3 class="countdown-title">會考倒數</h3>
+                    <div id="countdown-huike" class="countdown-display"></div>
+                    <p class="countdown-date">2026/05/16</p>
                 </div>
             </div>
+            <!-- 輪播指示器 -->
+            <div class="countdown-indicators">
+                <button class="indicator active" data-index="0"></button>
+                <button class="indicator" data-index="1"></button>
+                <button class="indicator" data-index="2"></button>
+                <button class="indicator" data-index="3"></button>
+                <button class="indicator" data-index="4"></button>
+                <button class="indicator" data-index="5"></button>
+            </div>
+            <!-- 輪播控制按鈕 -->
+            <button class="carousel-control prev" id="prevBtn">‹</button>
+            <button class="carousel-control next" id="nextBtn">›</button>
         </div>
     </section>
 

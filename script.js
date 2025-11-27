@@ -1,14 +1,34 @@
 // ======== 倒數計時功能 ========
 const countdowns = [
     {
-        id: "countdown-tongshe",
-        targetDate: new Date("2026-04-25T00:00:00"),
-        endMessage: "統測開始！加油！💪"
+        id: "countdown-exam2",
+        targetDate: new Date("2025-12-01T00:00:00"),
+        endMessage: "第二次段考開始！加油！📝"
     },
     {
         id: "countdown-end",
         targetDate: new Date("2025-12-20T00:00:00"),
         endMessage: "時間到！一帶米扛幾樓 🎉"
+    },
+    {
+        id: "countdown-mock",
+        targetDate: new Date("2025-12-23T00:00:00"),
+        endMessage: "統測模擬考開始！全力以赴！💪"
+    },
+    {
+        id: "countdown-xuece",
+        targetDate: new Date("2026-01-17T00:00:00"),
+        endMessage: "學測開始！相信自己！🌟"
+    },
+    {
+        id: "countdown-tongshe",
+        targetDate: new Date("2026-04-25T00:00:00"),
+        endMessage: "統測開始！加油！💪"
+    },
+    {
+        id: "countdown-huike",
+        targetDate: new Date("2026-05-16T00:00:00"),
+        endMessage: "會考開始！努力！📚"
     }
 ];
 
@@ -40,6 +60,80 @@ function updateAllCountdowns() {
 // 初始化所有倒數計時
 updateAllCountdowns();
 setInterval(updateAllCountdowns, 1000);
+
+// ======== 倒數計時輪播功能 ========
+let currentSlide = 0;
+const slides = document.querySelectorAll('.countdown-card');
+const indicators = document.querySelectorAll('.indicator');
+const totalSlides = slides.length;
+let autoSlideInterval;
+
+function showSlide(index) {
+    // 處理索引邊界
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+    
+    // 移除所有 active class
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // 添加 active class 到當前項目
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+// 自動輪播
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000); // 每 5 秒切換
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+// 初始化輪播
+startAutoSlide();
+
+// 按鈕控制
+document.getElementById('nextBtn').addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    startAutoSlide(); // 重新開始自動輪播
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    startAutoSlide();
+});
+
+// 指示器點擊
+indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+        const index = parseInt(indicator.getAttribute('data-index'));
+        showSlide(index);
+        stopAutoSlide();
+        startAutoSlide();
+    });
+});
+
+// 滑鼠懸停時暫停自動輪播
+const carousel = document.querySelector('.countdown-carousel');
+carousel.addEventListener('mouseenter', stopAutoSlide);
+carousel.addEventListener('mouseleave', startAutoSlide);
 
 // ======== 深色模式切換 ========
 const toggleBtn = document.getElementById('toggleTheme');
