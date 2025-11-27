@@ -16,7 +16,7 @@
     <nav class="navbar bg-dark navbar-dark p-3 navbar-expand-lg">
         <div class="container">
             <a href="#" class="navbar-brand">
-                <img src="./logo-1.png" alt="長榮中學校徽">
+                <img src="./logo1.png" alt="長榮中學校徽">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,32 @@
 
     <!-- 倒數計時區 -->
     <section id="countdown-section">
-        <h2 class="display-5 fw-bold mb-4">終焉的倒數計時</h2>
-        <div id="countdown-display"></div>
+        <h2 class="display-5 fw-bold mb-4">倒數計時</h2>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+                <!-- 統測倒數 -->
+                <div class="col">
+                    <div class="countdown-card">
+                        <h3 class="countdown-title">統測倒數</h3>
+                        <div id="countdown-tongshe" class="countdown-display"></div>
+                        <p class="countdown-date">2026/04/25</p>
+                    </div>
+                </div>
+                <!-- 終焉倒數 -->
+                <div class="col">
+                    <div class="countdown-card">
+                        <h3 class="countdown-title">終焉倒數</h3>
+                        <div id="countdown-end" class="countdown-display"></div>
+                        <p class="countdown-date">2025/12/20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 學習歷程 -->
+    <!-- 常用資訊連結 -->
     <div class="p-5 section-content">
-        <h1 id="常用資訊連結" class="section-title">學習歷程</h1>
+        <h1 id="常用資訊連結" class="section-title">常用資訊連結</h1>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
@@ -75,7 +94,7 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">高中職線上系統</h5>
-                            <p class="card-text">查詢成績、缺曠課與學分</p>
+                            <p class="card-text">查詢成績、課表與學分</p>
                             <a href="https://online.cjshs.tn.edu.tw/online" class="btn btn-primary" target="_blank">前往系統</a>
                         </div>
                     </div>

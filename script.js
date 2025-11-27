@@ -1,14 +1,27 @@
 // ======== 倒數計時功能 ========
-const targetDate = new Date("2025-12-20T00:00:00");
-const countdownEl = document.getElementById("countdown-display");
+const countdowns = [
+    {
+        id: "countdown-tongshe",
+        targetDate: new Date("2026-04-25T00:00:00"),
+        endMessage: "統測開始！加油！💪"
+    },
+    {
+        id: "countdown-end",
+        targetDate: new Date("2025-12-20T00:00:00"),
+        endMessage: "時間到！一帶米扛幾樓 🎉"
+    }
+];
 
-function updateCountdown() {
+function updateCountdown(countdown) {
+    const countdownEl = document.getElementById(countdown.id);
+    if (!countdownEl) return;
+    
     const now = new Date();
-    const diff = targetDate - now;
+    const diff = countdown.targetDate - now;
     
     if (diff <= 0) {
-        countdownEl.textContent = "時間到！一帶米扛幾樓 🎉";
-        countdownEl.style.fontSize = "2rem";
+        countdownEl.textContent = countdown.endMessage;
+        countdownEl.style.fontSize = "1.5rem";
         return;
     }
     
@@ -20,9 +33,13 @@ function updateCountdown() {
     countdownEl.textContent = `${days} 天 ${hours} 小時 ${minutes} 分 ${seconds} 秒`;
 }
 
-// 初始化倒數計時
-updateCountdown();
-setInterval(updateCountdown, 1000);
+function updateAllCountdowns() {
+    countdowns.forEach(countdown => updateCountdown(countdown));
+}
+
+// 初始化所有倒數計時
+updateAllCountdowns();
+setInterval(updateAllCountdowns, 1000);
 
 // ======== 深色模式切換 ========
 const toggleBtn = document.getElementById('toggleTheme');
