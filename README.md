@@ -1,5 +1,5 @@
-# The-School-Crawler
-爬光學校網頁
+# Better_Student_Portal
+做出學生真正需要的學生專區
 
 找出學校網頁現在的缺點  
 例如：  
@@ -67,5 +67,7 @@
 選項：余饒理、加藤長太郎、蔡忠雄、費仁純、萬榮華、趙天慈、蘇進安、許德勝、王昭卿、戴明福  
 回答[]
 
-https://coolors.co/ffffff-fc7753-1098f7     
+https://coolors.co/ffffff-fc7753-1098f7    
+
+
 https://medium.com/blog
