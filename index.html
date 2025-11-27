@@ -35,11 +35,11 @@
 
     <!-- 倒數計時區 -->
     <section id="countdown-section">
-        <h2 class="display-5 fw-bold mb-4">終焉的倒數計時</h2>
-        <div class="container">
-            <div class="countdown-carousel">
+        <div class="countdown-wrapper">
+            <!-- 輪播軌道 -->
+            <div class="countdown-track">
                 <!-- 倒數計時卡片 -->
-                <div class="countdown-card active">
+                <div class="countdown-card">
                     <h3 class="countdown-title">第二次段考倒數</h3>
                     <div id="countdown-exam2" class="countdown-display"></div>
                     <p class="countdown-date">2025/12/01</p>
@@ -70,24 +70,26 @@
                     <p class="countdown-date">2026/05/16</p>
                 </div>
             </div>
-            <!-- 輪播指示器 -->
-            <div class="countdown-indicators">
-                <button class="indicator active" data-index="0"></button>
-                <button class="indicator" data-index="1"></button>
-                <button class="indicator" data-index="2"></button>
-                <button class="indicator" data-index="3"></button>
-                <button class="indicator" data-index="4"></button>
-                <button class="indicator" data-index="5"></button>
-            </div>
+            
             <!-- 輪播控制按鈕 -->
             <button class="carousel-control prev" id="prevBtn">‹</button>
             <button class="carousel-control next" id="nextBtn">›</button>
         </div>
+        
+        <!-- 輪播指示器 -->
+        <div class="countdown-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+        </div>
     </section>
 
-    <!-- 常用資訊連結 -->
+    <!-- 學習歷程 -->
     <div class="p-5 section-content">
-        <h1 id="常用資訊連結" class="section-title">常用資訊連結</h1>
+        <h1 id="學習歷程" class="section-title">學習歷程</h1>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">

@@ -13,7 +13,7 @@ const countdowns = [
     {
         id: "countdown-mock",
         targetDate: new Date("2025-12-23T00:00:00"),
-        endMessage: "統測模擬考開始！全力以赴！💪"
+        endMessage: "模擬考開始！全力以赴！💪"
     },
     {
         id: "countdown-xuece",
@@ -63,10 +63,26 @@ setInterval(updateAllCountdowns, 1000);
 
 // ======== 倒數計時輪播功能 ========
 let currentSlide = 0;
+const track = document.querySelector('.countdown-track');
 const slides = document.querySelectorAll('.countdown-card');
 const indicators = document.querySelectorAll('.indicator');
 const totalSlides = slides.length;
 let autoSlideInterval;
+
+function updateTrackPosition() {
+    // 計算軌道應該移動的距離
+    const offset = -currentSlide * 100; // 每張卡片佔 100% 寬度
+    track.style.transform = `translateX(${offset}%)`;
+    
+    // 更新指示器
+    indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
 
 function showSlide(index) {
     // 處理索引邊界
@@ -78,13 +94,7 @@ function showSlide(index) {
         currentSlide = index;
     }
     
-    // 移除所有 active class
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // 添加 active class 到當前項目
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
+    updateTrackPosition();
 }
 
 function nextSlide() {
@@ -105,6 +115,7 @@ function stopAutoSlide() {
 }
 
 // 初始化輪播
+updateTrackPosition();
 startAutoSlide();
 
 // 按鈕控制
@@ -131,9 +142,9 @@ indicators.forEach(indicator => {
 });
 
 // 滑鼠懸停時暫停自動輪播
-const carousel = document.querySelector('.countdown-carousel');
-carousel.addEventListener('mouseenter', stopAutoSlide);
-carousel.addEventListener('mouseleave', startAutoSlide);
+const countdownWrapper = document.querySelector('.countdown-wrapper');
+countdownWrapper.addEventListener('mouseenter', stopAutoSlide);
+countdownWrapper.addEventListener('mouseleave', startAutoSlide);
 
 // ======== 深色模式切換 ========
 const toggleBtn = document.getElementById('toggleTheme');

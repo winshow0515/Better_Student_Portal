@@ -56,76 +56,67 @@ a {
 #countdown-section {
   background: linear-gradient(135deg, #0066cc, #33ccff);
   color: #eaecec;
-  padding: 80px 20px;
+  padding: 0;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   position: relative;
-}
-
-#countdown-section h2 {
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  margin-bottom: 40px;
-}
-
-/* 輪播容器 */
-.countdown-carousel {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-  height: 280px;
   overflow: hidden;
 }
 
-/* 倒數計時卡片 */
-.countdown-card {
-  position: absolute;
+/* 輪播容器 */
+.countdown-wrapper {
+  position: relative;
   width: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 40px 30px;
-  opacity: 0;
-  transform: translateX(100%) scale(0.9);
-  transition: all 0.6s ease-in-out;
-  pointer-events: none;
+  height: 350px;
+  overflow: hidden;
 }
 
-.countdown-card.active {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-  pointer-events: auto;
+/* 輪播軌道 - 容納所有卡片 */
+.countdown-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* 倒數計時卡片 - 全寬長方形 */
+.countdown-card {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0066cc, #33ccff);
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .countdown-title {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 25px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  letter-spacing: 2px;
 }
 
 .countdown-display {
-  font-size: 2.2rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  margin: 25px 0;
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+  margin: 30px 0;
+  letter-spacing: 3px;
 }
 
 .countdown-date {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
-  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.8rem;
+  margin-top: 25px;
   margin-bottom: 0;
   font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 /* 輪播控制按鈕 */
@@ -133,51 +124,54 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.5);
   color: #fff;
-  font-size: 2.5rem;
-  width: 50px;
-  height: 50px;
+  font-size: 3.5rem;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
   padding: 0;
+  font-weight: bold;
 }
 
 .carousel-control:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .carousel-control:active {
-  transform: translateY(-50%) scale(0.95);
+  transform: translateY(-50%) scale(1);
 }
 
 .carousel-control.prev {
-  left: -60px;
+  left: 40px;
 }
 
 .carousel-control.next {
-  right: -60px;
+  right: 40px;
 }
 
 /* 輪播指示器 */
 .countdown-indicators {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 320px;
+  gap: 15px;
+  padding: 30px 0;
+  background: linear-gradient(135deg, #0066cc, #33ccff);
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
   border: 2px solid rgba(255, 255, 255, 0.6);
@@ -187,14 +181,14 @@ a {
 }
 
 .indicator:hover {
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.3);
 }
 
 .indicator.active {
   background: #fff;
-  width: 32px;
-  border-radius: 6px;
+  width: 40px;
+  border-radius: 7px;
 }
 
 #countdown-display {
@@ -331,27 +325,33 @@ body.dark .navbar {
 }
 
 body.dark #countdown-section {
-  background: linear-gradient(135deg, #222, #333);
-  color: #fff;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+body.dark .countdown-track {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
 }
 
 body.dark .countdown-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
 }
 
 body.dark .carousel-control {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 body.dark .carousel-control:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+body.dark .countdown-indicators {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
 }
 
 body.dark .indicator {
   background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 body.dark .indicator.active {
@@ -412,54 +412,55 @@ body.dark .theme-toggle:hover {
     margin: 8px 0;
   }
 
-  .countdown-carousel {
-    max-width: 90%;
-    height: 260px;
+  .countdown-wrapper {
+    height: 300px;
   }
 
   .countdown-card {
-    padding: 30px 20px;
-  }
-
-  .countdown-display {
-    font-size: 1.6rem;
-    min-height: 60px;
+    padding: 60px 30px;
   }
 
   .countdown-title {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+
+  .countdown-display {
+    font-size: 2.8rem;
+    margin: 25px 0;
   }
 
   .countdown-date {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    margin-top: 20px;
   }
 
   .carousel-control {
-    width: 40px;
-    height: 40px;
-    font-size: 2rem;
+    width: 55px;
+    height: 55px;
+    font-size: 2.8rem;
   }
 
   .carousel-control.prev {
-    left: -50px;
+    left: 20px;
   }
 
   .carousel-control.next {
-    right: -50px;
+    right: 20px;
   }
 
   .countdown-indicators {
-    margin-top: 300px;
-    gap: 10px;
+    gap: 12px;
+    padding: 25px 0;
   }
 
   .indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 
   .indicator.active {
-    width: 28px;
+    width: 35px;
   }
 
   #countdown-display {
@@ -491,59 +492,61 @@ body.dark .theme-toggle:hover {
 
 @media (max-width: 576px) {
   #countdown-section {
-    padding: 60px 10px;
+    padding: 0;
   }
 
-  .countdown-carousel {
-    max-width: 95%;
-    height: 240px;
+  .countdown-wrapper {
+    height: 260px;
   }
 
   .countdown-card {
-    padding: 25px 15px;
-  }
-
-  .countdown-display {
-    font-size: 1.4rem;
-    min-height: 55px;
+    padding: 50px 20px;
   }
 
   .countdown-title {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .countdown-display {
+    font-size: 2.2rem;
+    margin: 20px 0;
+    letter-spacing: 2px;
   }
 
   .countdown-date {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 15px;
   }
 
   .carousel-control {
-    width: 35px;
-    height: 35px;
-    font-size: 1.8rem;
+    width: 45px;
+    height: 45px;
+    font-size: 2.2rem;
+    border-width: 2px;
   }
 
   .carousel-control.prev {
-    left: 5px;
+    left: 10px;
   }
 
   .carousel-control.next {
-    right: 5px;
+    right: 10px;
   }
 
   .countdown-indicators {
-    margin-top: 270px;
-    gap: 8px;
+    gap: 10px;
+    padding: 20px 0;
   }
 
   .indicator {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   .indicator.active {
-    width: 24px;
+    width: 30px;
   }
 
   #countdown-display {
