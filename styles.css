@@ -1,0 +1,351 @@
+/* ======== 全域設定 ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: #eaecec;
+  color: #333;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #0a2540;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ======== 導覽列 ======== */
+.navbar {
+  background: linear-gradient(90deg, #003366, #3366cc);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.navbar-brand img {
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.navbar .nav-link {
+  color: #eaecec !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 12px;
+  transition: all 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #ffcc00 !important;
+  text-shadow: 0 0 5px rgba(234, 236, 236, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ======== 倒數計時區 ======== */
+#countdown-section {
+  background: linear-gradient(135deg, #0066cc, #33ccff);
+  color: #eaecec;
+  padding: 80px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#countdown-section h2 {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#countdown-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  margin-top: 20px;
+}
+
+/* ======== 內容區塊 ======== */
+.section-content {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #004080;
+  border-left: 6px solid #2b7cff;
+  border-bottom: 3px solid #66a3ff;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+}
+
+/* ======== 卡片樣式 ======== */
+.card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #003366;
+  font-weight: 600;
+  margin-bottom: 12px;
+  min-height: 3em;
+}
+
+.card-text {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.card .btn {
+  background: linear-gradient(90deg, #3366cc, #5a95ff);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.card .btn:hover {
+  background: linear-gradient(90deg, #1e5ed6, #497dff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(51, 102, 204, 0.3);
+}
+
+/* ======== 主題切換按鈕 ======== */
+.theme-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border: none;
+  background: #3366cc;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s, background 0.3s;
+  z-index: 9999;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+  background: #ff9900;
+}
+
+.theme-toggle:active {
+  transform: rotate(20deg) scale(0.95);
+}
+
+/* ======== 頁尾 ======== */
+footer {
+  background: #003366;
+  color: #eaecec;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 60px;
+  transition: 0.3s;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.footer-credit {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ======== 深色模式 ======== */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background: linear-gradient(90deg, #111, #222);
+}
+
+body.dark #countdown-section {
+  background: linear-gradient(135deg, #222, #333);
+  color: #fff;
+}
+
+body.dark .section-content {
+  background: #1a1a1a;
+}
+
+body.dark .section-title {
+  color: #66b3ff;
+  border-color: #3399ff;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+body.dark .card:hover {
+  box-shadow: 0 12px 28px rgba(255,255,255,0.1);
+}
+
+body.dark .card-title {
+  color: #99ccff;
+}
+
+body.dark .card-text {
+  color: #b0b0b0;
+}
+
+body.dark .btn-primary {
+  background: linear-gradient(90deg, #3399ff, #66b3ff);
+}
+
+body.dark .btn-primary:hover {
+  background: linear-gradient(90deg, #007bff, #3399ff);
+}
+
+body.dark footer {
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+body.dark .theme-toggle {
+  background: #555;
+}
+
+body.dark .theme-toggle:hover {
+  background: #ffaa00;
+}
+
+/* ======== 響應式設計 (RWD) ======== */
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 1.1rem;
+    margin: 8px 0;
+  }
+
+  #countdown-display {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    padding: 8px 15px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    min-height: auto;
+  }
+
+  .theme-toggle {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #countdown-section {
+    padding: 60px 15px;
+  }
+
+  #countdown-display {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .card .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ======== 載入動畫效果 ======== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ======== 滾動條美化 ======== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3366cc;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0040ff;
+}
+
+body.dark ::-webkit-scrollbar-track {
+  background: #222;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3399ff;
+}
