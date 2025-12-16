@@ -24,10 +24,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="#" class="nav-link fs-3">首頁</a></li>
-                    <li class="nav-item"><a href="#常用資訊連結" class="nav-link fs-3">常用資訊連結</a></li>
+                    <li class="nav-item"><a href="#常用資訊連結" class="nav-link fs-3">常用資訊</a></li>
                     <li class="nav-item"><a href="#我要學分" class="nav-link fs-3">我要學分</a></li>
                     <li class="nav-item"><a href="#季節性資訊" class="nav-link fs-3">季節性資訊</a></li>
                     <li class="nav-item"><a href="#學好校規" class="nav-link fs-3">校規</a></li>
+                    <li class="nav-item"><a href="#學長姐心得" class="nav-link fs-3">學長姐心得</a></li>
                 </ul>
             </div>
         </div>
@@ -40,12 +41,7 @@
             <div class="countdown-track">
                 <!-- 倒數計時卡片 -->
                 <div class="countdown-card">
-                    <h3 class="countdown-title">第二次段考倒數</h3>
-                    <div id="countdown-exam2" class="countdown-display"></div>
-                    <p class="countdown-date">2025/12/01</p>
-                </div>
-                <div class="countdown-card">
-                    <h3 class="countdown-title">破滅へのカウントダウン</h3>
+                    <h3 class="countdown-title">終焉倒數</h3>
                     <div id="countdown-end" class="countdown-display"></div>
                     <p class="countdown-date">2025/12/20</p>
                 </div>
@@ -62,7 +58,7 @@
                 <div class="countdown-card">
                     <h3 class="countdown-title">統測倒數</h3>
                     <div id="countdown-tongshe" class="countdown-display"></div>
-                    <p class="countdown-date">2026/04/25</p>
+                    <p class="countdown-date">2025/04/25</p>
                 </div>
                 <div class="countdown-card">
                     <h3 class="countdown-title">會考倒數</h3>
@@ -87,9 +83,9 @@
         </div>
     </section>
 
-    <!-- 學習歷程 -->
+    <!-- 常用資訊連結 -->
     <div class="p-5 section-content">
-        <h1 id="學習歷程" class="section-title">學習歷程</h1>
+        <h1 id="常用資訊連結" class="section-title">常用資訊連結</h1>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
@@ -236,6 +232,52 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 學長姐心得 -->
+    <div class="p-5 section-content">
+        <h1 id="學長姐心得" class="section-title">學長姐心得分享</h1>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">勸退指南</h5>
+                            <p class="card-text">入學第一週我就後悔了...</p>
+                            <button class="btn btn-primary" onclick="openArticle('article1')">查看文章</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">校園生活小撇步</h5>
+                            <p class="card-text">怎麼讓校園生活過得舒服一點</p>
+                            <button class="btn btn-primary" onclick="openArticle('article2')">查看文章</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">職科證照</h5>
+                            <p class="card-text">證照有什麼用？有哪些值得考？怎麼考？</p>
+                            <button class="btn btn-primary" onclick="openArticle('article3')">查看文章</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文章彈出視窗 -->
+    <div id="articleModal" class="article-modal">
+        <div class="article-modal-content">
+            <button class="article-modal-close" onclick="closeArticle()">&times;</button>
+            <div id="articleContent" class="article-body">
+                <!-- 文章內容會動態載入到這裡 -->
             </div>
         </div>
     </div>
